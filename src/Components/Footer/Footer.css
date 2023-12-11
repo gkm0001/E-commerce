@@ -1,0 +1,160 @@
+footer {
+    background-color: #131313;
+}
+.footer1
+{
+ display: flex;
+ flex-direction: column;
+}
+.logo2
+{
+ font-family: Roboto;
+ font-size: 50px;
+ color: #DF4E4E;
+}
+.names
+{
+ display: flex;
+ justify-content: space-around;
+ margin-top: 30px;
+}
+
+.content1
+{
+ display: flex;
+ gap: 40px;
+ font-family: Robotosimple;
+}
+
+li{
+ list-style: none;
+}
+
+.footer1 a{
+ text-decoration: none;
+ color: white;
+}
+
+.item10
+{
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
+ color: white;
+}
+
+.LinksBelow
+{
+ display: flex;
+  align-items:row;
+ justify-content: space-between;
+ margin-top: 1%;
+ 
+}
+
+.handles
+{
+ display: flex;
+ gap: 30%;
+
+}
+
+.copyrights
+{
+ margin-left:2%;
+ font-size: 9px;
+ color: rgb(148, 59, 20);
+  margin-bottom: 1%;
+}
+
+.fa 
+{
+ font-size: 30px;
+ text-decoration: none;
+ color: white;
+}
+
+.fa:hover 
+{
+opacity: 0.7;
+}
+
+#line{
+ background-color: #D54242;
+ margin-top: 25px;  
+ color: #D54242;
+}
+
+.line-lower-footer hr {
+  height: 2px;
+  background-color: red;
+  border: none;
+}
+
+.handles{
+   margin-right: 300px; 
+  gap: 30px
+
+}
+.logo2{
+    
+    font-weight: 600;
+}
+
+
+@media (max-width:820px),only screen and (width: 912px) and (height: 1368px)  {
+         
+
+.content1 {
+    gap:30px;      
+}
+/* 
+.handles{
+     font-size: 1vw;
+} */
+
+.logo2{
+   font-size: 20px;
+   margin-left: 7%;
+}
+.item10{
+    line-height: 1.6;
+    font-size: 15px; 
+    color:white; 
+}
+.LinksBelow{
+     display: flex;
+     justify-content: space-evenly;
+     margin-top: 10px;
+     margin-bottom: 20px;
+}
+.copyrights {
+      font-size: 5px;
+      margin-left: -20px;
+}
+
+.handles {
+   margin-right: 20px; 
+   gap: 15px
+}
+.right-image {
+   
+  width: 100%;
+   
+}
+
+}
+@media (max-width:386px) {
+
+    .logo2{
+      
+        font-size: 15px;
+   }
+   
+    .item10{
+
+        font-size: 10px;
+
+    }
+
+}
