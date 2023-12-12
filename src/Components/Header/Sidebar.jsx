@@ -29,7 +29,7 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
-    title: 'Other',
+    title: 'Sell',
     path: '/Sell',
     icon: <i class="fa-solid fa-otter"></i>,
     cName: 'nav-text'
