@@ -2,22 +2,22 @@ import React from 'react'
 
 function Sell() {
   return (
-    <div>
+    <div className='bg-black '>
          <p>
-            <p className='text-2xl font-extrabold'>
+            <p className='text-2xl font-extrabold text-red-700 py-5'>
             Welcome to Student Bazaar, to list any product follow these steps:
             </p>
 
-            <div>
+            <div className='text-white'>
                     
-                       <h1>1. *Capture Your Product:*</h1> 
-                        Snap 2-3 photos of your item from different angles to showcase it.
+                       <h1 className='py-2'>1. Snap 2-3 photos of your item from different angles to showcase it.
+</h1> 
+                        
+                       <h1 className='py-2'> 2. Send these photos to our provided WhatsApp and Telegram numbers. Our team will swiftly review your listing.</h1>
+                       
 
-                       <h1> 2. *Submit via WhatsApp/Telegram:*</h1>
-                        Send these photos to our provided WhatsApp and Telegram numbers. Our team will swiftly review your listing.
-
-                        <h1>3. *Share Product Details:*</h1>
-                        Provide key details about your product. The more information, the better!
+                        <h1 className='py-2'>3.  Provide key details about your product. The more information, the better!</h1>
+                       
             </div>
 
             <div>
