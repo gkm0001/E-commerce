@@ -12,9 +12,9 @@ To set up this project locally, follow these steps:
 ### Steps
 1. You just need to 
        
-    ```npm install
+    npm install
 
-2. Start the development server:
+2. Start the development server:o
     ```bash
     npm run dev
     ```
