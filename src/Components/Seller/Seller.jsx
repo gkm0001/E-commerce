@@ -127,16 +127,7 @@ const SellForm = () => {
               required
             ></textarea>
           </div>
-          {/* <div className="mb-4">
-            <Input
-              label="Contact Number"
-              name="contactNumber"
-              type="number"
-              placeholder="Enter contact number"
-              value={contactNumber}
-              onChange={(e) => setContactNumber(e.target.value)}
-            />
-          </div> */}
+           
           <div className="mb-4">
             <label className="block text-sm font-medium text-gray-700">
               Category
