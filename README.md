@@ -11,8 +11,9 @@ To set up this project locally, follow these steps:
 - Git clone https://github.com/gkm0001/Student-Bazaar.git
 ### Steps
 1. You just need to 
-       
+    ```bash
     npm install
+    ```
 
 2. Start the development server:o
     ```bash
