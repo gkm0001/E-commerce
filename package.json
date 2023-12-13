@@ -31,7 +31,7 @@
     "react-responsive-carousel": "^3.2.23",
     "react-responsive-modal": "^6.4.2",
     "react-router-dom": "^6.14.0",
-    "react-scripts": "^3.0.1",
+    "react-scripts": "^5.0.1",
     "uuid": "^9.0.0",
     "uuidv4": "^6.2.13",
     "web-vitals": "^2.1.4"
