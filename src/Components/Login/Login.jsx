@@ -12,7 +12,6 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
-
   // Function to handle login
   const handleLogin = (e) => {
     e.preventDefault();

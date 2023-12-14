@@ -87,7 +87,7 @@ const SellForm = () => {
               label="Item Name"
               name="itemName"
               type="text"
-              className='text-white'
+              className="text-white"
               placeholder="Enter item name"
               value={itemName}
               onChange={(e) => setItemName(e.target.value)}
@@ -121,7 +121,7 @@ const SellForm = () => {
               required
             ></textarea>
           </div>
-           
+
           <div className="mb-4">
             <label className="block text-sm font-medium text-gray-700">
               Category

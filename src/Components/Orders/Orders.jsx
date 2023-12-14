@@ -15,7 +15,7 @@ const Profile = () => {
 
   // Fetch user details and listed items from the database
   useEffect(() => {
-    console.log("useEffect")
+    console.log("useEffect");
     axios.get("/api/showOrders").then((res) => {
       console.log(res.data);
       setUser(res.data);
@@ -24,13 +24,13 @@ const Profile = () => {
     });
   }, []);
 
-//   Delete an item from the database
-    const deleteItem = (id) => {
-      axios.post("/api/deleteOrder", { id: id }).then((res) => {
-        console.log(res.data);
-        setItems(items.filter((item) => item._id !== id));
-      });
-    };
+  //   Delete an item from the database
+  const deleteItem = (id) => {
+    axios.post("/api/deleteOrder", { id: id }).then((res) => {
+      console.log(res.data);
+      setItems(items.filter((item) => item._id !== id));
+    });
+  };
 
   const handleLogout = () => {
     localStorage.removeItem("details");
@@ -52,31 +52,6 @@ const Profile = () => {
         ) : (
           <div>
             <div className="my-7 mx-auto w-[97%] sm:w-[75%] md:w-[70%] text-xl text-red-600 font-semibold flex flex-col gap-7 p-4 sm:p-10 border-2 border-solid border-red-600 rounded-xl ">
-              {/* {user ? (
-                <div>
-                  <div>
-                    <span className="text-gray-800">Username : </span>{" "}
-                    {user.name}
-                  </div>
-                  <div className="text-xl text-red-600 font-semibold">
-                    <span className="text-gray-800">Email : </span>
-                    <span className="break-words">{user.email}</span>
-                  </div>
-                  <div className="text-xl text-red-600 font-semibold">
-                    <span className="text-gray-800">Phone : </span>
-                    <span className="break-words">{user.phone}</span>
-                  </div>
-                  <button
-                    className="bg-gray-600 hover:bg-gray-700 active:bg-gray-800 text-white text-base py-2 px-7 rounded-lg w-fit"
-                    onClick={handleLogout}
-                  >
-                    Log out
-                  </button>
-                </div>
-              ) : (
-                <div>Loading user data...</div>
-              )} */}
-
               <div className="mt-2 text-2xl text-gray-800 font-semibold">
                 <span>Orders : </span>
               </div>

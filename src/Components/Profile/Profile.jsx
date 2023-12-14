@@ -111,18 +111,20 @@ const Profile = () => {
                           className="bg-white rounded-lg shadow-md p-4"
                         >
                           <ItemCard rest={item} width="full" />
-                          <div className="flex justify-end"><button
-                            onClick={() => updateItem(item._id)}
-                            className="bg-green-500 hover:bg-green-800 text-white text-sm py-1 px-4 rounded-lg w-fit mx-auto mt-3"
-                          >
-                            Update Item
-                          </button>
-                          <button
-                            onClick={() => deleteItem(item._id)}
-                            className="bg-red-500 text-white text-sm py-1 px-4 rounded-lg w-fit mx-auto mt-3"
-                          >
-                            Delete Item
-                          </button></div>
+                          <div className="flex justify-end">
+                            <button
+                              onClick={() => updateItem(item._id)}
+                              className="bg-green-500 hover:bg-green-800 text-white text-sm py-1 px-4 rounded-lg w-fit mx-auto mt-3"
+                            >
+                              Update Item
+                            </button>
+                            <button
+                              onClick={() => deleteItem(item._id)}
+                              className="bg-red-500 text-white text-sm py-1 px-4 rounded-lg w-fit mx-auto mt-3"
+                            >
+                              Delete Item
+                            </button>
+                          </div>
                         </div>
                       ))}
                     </div>
