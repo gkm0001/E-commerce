@@ -4,9 +4,6 @@ import Input from "../Input/Input";
 import { BlueButton } from "../Buttons/Buttons";
 import { Link, useNavigate } from "react-router-dom";
 
-// axios.defaults.baseURL = "http://localhost:5000";
-axios.defaults.baseURL = "https://dark-gray-butterfly-yoke.cyclic.app";
-
 const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");

@@ -5,9 +5,6 @@ import { AuthContext } from "../../Contexts/AuthContext";
 import { InfinitySpin } from "react-loader-spinner";
 import ItemCard from "../../Components/ItemCard/ItemCard";
 
-// axios.defaults.baseURL = "http://localhost:5000";
-axios.defaults.baseURL = "https://dark-gray-butterfly-yoke.cyclic.app";
-
 const Profile = () => {
   const navigate = useNavigate();
 

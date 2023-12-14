@@ -14,10 +14,7 @@ import whatsapp from "./images/WhatsApp_icon.png";
 import axios from "axios";
 import ItemCard from "../ItemCard/ItemCard";
 import { SearchContext } from "../../Contexts/SearchContext";
- 
-
-axios.defaults.baseURL = "https://dark-gray-butterfly-yoke.cyclic.app";
-// axios.defaults.baseURL = "http://localhost:5000";
+import Pagination from "@mui/material/Pagination";
 
 const App = () => {
   useEffect(() => {
@@ -53,15 +50,18 @@ export default function Home(props) {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchedItems, setSearchedItems] = useState([]);
+  const [fetchCount, setFetchCount] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
   const { currentSearch } = useContext(SearchContext);
 
   // Fetch all items from the database
   useEffect(() => {
     axios
-      .get("/api/dashboard")
+      .get(`/api/dashboard?limit=8&page=${currentPage}`)
       .then((res) => {
         const allItems = res.data;
         setItems(allItems);
+
         if (searchedItem) {
           const filteredItems = allItems.filter((item) => {
             return item.itemName
@@ -73,17 +73,32 @@ export default function Home(props) {
           setSearchedItems(allItems);
         }
         console.log("In Items rendered on dashboard : ", res.data);
+
+        axios
+          .get("/api/count")
+          .then((res) => {
+            console.log(res.data);
+            setFetchCount(res.data.count);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+
         setLoading(false);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, [props.search]);
+  }, [currentPage, props.search]);
 
   const scrollToContent = () => {
     if (contentRef.current) {
       contentRef.current.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const handlePageChange = (event, page) => {
+    setCurrentPage(page);
   };
 
   return (
@@ -177,6 +192,17 @@ export default function Home(props) {
             ))}
         </div>
       )}
+
+      <div className="flex items-center justify-center">
+        <Pagination
+          count={Math.ceil(fetchCount / 8)}
+          page={currentPage}
+          onChange={handlePageChange}
+          color="primary"
+          size="large"
+          className="bg-slate-50 m-3.5 py-1.5 rounded-full"
+        />
+      </div>
 
       <div className="grid-wrapper">
         <div className="image-grid1">

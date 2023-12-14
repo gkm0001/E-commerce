@@ -26,6 +26,7 @@ export default function Header() {
 
   const searchHandler = (e) => {
     e.preventDefault();
+    if (!search) return;
     navigate(`/search/${search}`);
     window.location.reload();
   };
