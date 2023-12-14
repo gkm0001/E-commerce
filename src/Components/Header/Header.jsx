@@ -217,6 +217,10 @@ export default function Header() {
             <Link to="/furniture" className="Home">
               Furniture
             </Link>
+
+            <Link to="/other" className="Home">
+              Other
+            </Link>
             <Link to="/Sell" className="Home">
               Sell
             </Link>

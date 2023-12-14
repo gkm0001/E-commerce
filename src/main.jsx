@@ -26,6 +26,7 @@ import { AuthContextProvider } from "./Contexts/AuthContext.jsx";
 import { ItemContextProvider } from "./Contexts/ItemContext.jsx";
 import Sell from "./Components/Sell/Sell.jsx";
 
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
@@ -38,6 +39,7 @@ const router = createBrowserRouter(
       <Route path="books" element={<Home category="Books" />} />
       <Route path="electronics" element={<Home category="Electronics" />} />
       <Route path="furniture" element={<Home category="Furniture" />} />
+      <Route path="other" element={<Home category="Other"/>}/>
       <Route path="Sell" element={<Sell/>} />
       <Route path="updateItem/:id" element={<Updation />} />
       <Route path="verify-email" element={<Verification />} />
