@@ -113,7 +113,7 @@ export default function Home(props) {
               </div>
 
               <div className="main-right">
-                <div className="right-image hidden sm:block">
+                <div className="right-image sm:block">
                   <img src={mianimags} alt="" />
                 </div>
               </div>

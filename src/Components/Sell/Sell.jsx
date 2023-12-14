@@ -3,7 +3,7 @@ import React from 'react'
 function Sell() {
   return (
     <div className='bg-black '>
-         <p>
+         <p className='ml-2'>
             <p className='text-2xl font-extrabold text-red-700 py-5'>
             Welcome to Student Bazaar, to list any product follow these steps:
             </p>

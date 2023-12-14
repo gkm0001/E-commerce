@@ -133,8 +133,13 @@ opacity: 0.7;
 
 .logo2{
    font-size: 20px;
-   margin-left: 7%;
+   /* margin-left: 7%; */
 }
+
+.logo2 span {
+     margin-left: 5px;
+}
+
 .item10{
     line-height: 1.6;
     font-size: 15px; 
