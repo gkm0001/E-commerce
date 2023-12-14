@@ -75,7 +75,7 @@ export default function Footer() {
 
           <div className="LinksBelow">
             <div className="copyrights">
-              <h1 className="text-xl">&copy;Copyright_student_bazaar</h1>
+              <h1 className="text-below-footer">&copy;Copyright_student_bazaar</h1>
             </div>
 
             <div className="handles">

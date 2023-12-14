@@ -92,13 +92,19 @@ opacity: 0.7;
 }
 
 .handles{
-   margin-right: 300px; 
-  gap: 30px
+   margin-right: 100px; 
+   gap: 50px;
 
 }
 .logo2{
     
     font-weight: 600;
+}
+
+.text-below-footer{
+    font-size: 1.25rem; 
+    line-height: 1.75rem; 
+    font-weight: 700;
 }
 
 
@@ -108,10 +114,22 @@ opacity: 0.7;
 .content1 {
     gap:30px;      
 }
-/* 
+
 .handles{
-     font-size: 1vw;
-} */
+      margin-left: 100px;
+      gap: 100px;
+}
+.fa-whatsapp , .fa-telegram , .fa-linkedin , .fa-instagram{
+     font-size: 22px;
+    
+}
+ 
+
+.text-below-footer{
+     font-size: 1rem;
+     line-height: 1.50rem;
+     font-weight: 700;
+}
 
 .logo2{
    font-size: 20px;
@@ -150,11 +168,33 @@ opacity: 0.7;
       
         font-size: 15px;
    }
+   .handles{
+       margin-left: 0;
+        
+   }
+
+   .fa-whatsapp , .fa-telegram , .fa-linkedin , .fa-instagram{
+    font-size: 15px;
+    gap: 15px;
    
-    .item10{
+}
+
+.text-below-footer{
+    font-size: 10px;
+    line-height: 0.50rem;
+    font-weight: 500;
+}
+   
+   
+ .item10{
 
         font-size: 10px;
 
+    }
+
+    .text-xl{
+        font-size: 0.5rem; /* 16px */
+        line-height: 1rem; /* 24px */
     }
 
 }
