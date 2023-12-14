@@ -44,7 +44,7 @@ const router = createBrowserRouter(
       <Route path="electronics" element={<Home category="Electronics" />} />
       <Route path="furniture" element={<Home category="Furniture" />} />
       <Route path="other" element={<Home category="Other"/>}/>
-      <Route path="Sell" element={<Sell/>} />
+      <Route path="Sells" element={<Sell/>} />
       <Route path="updateItem/:id" element={<Updation />} />
       <Route path="verify-email" element={<Verification />} />
       <Route path="profile" element={<Profile />} />

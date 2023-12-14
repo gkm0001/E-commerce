@@ -222,7 +222,7 @@ export default function Header() {
             <Link to="/other" className="Home">
               Other
             </Link>
-            <Link to="/Sell" className="Home">
+            <Link to="/Sells" className="Home">
               Sell
             </Link>
             <Link
