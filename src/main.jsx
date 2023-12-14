@@ -27,8 +27,8 @@ import { ItemContextProvider } from "./Contexts/ItemContext.jsx";
 import Sell from "./Components/Sell/Sell.jsx";
 import axios from 'axios';
 
-axios.defaults.baseURL = "http://localhost:5000";
-// axios.defaults.baseURL = "https://dark-gray-butterfly-yoke.cyclic.app";
+// axios.defaults.baseURL = "http://localhost:5000";
+axios.defaults.baseURL = "https://dark-gray-butterfly-yoke.cyclic.app";
 
 
 const router = createBrowserRouter(
