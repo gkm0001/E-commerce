@@ -56,38 +56,42 @@ export default function Home(props) {
 
   // Fetch all items from the database
   useEffect(() => {
-    axios
-      .post(`/api/dashboard?limit=8&page=${currentPage}`, {
-        category: props.category,
-      })
-      .then((res) => {
-        console.log("API request made")
-        const allItems = res.data;
-        setItems(allItems);
-
-        if (searchedItem) {
-          const filteredItems = allItems.filter((item) => {
-            return item.itemName
-              .toLowerCase()
-              .includes(searchedItem.toLowerCase());
-          });
+    if (searchedItem) {
+      axios
+        .post(`/api/search?limit=8&page=${currentPage}`, { searchedItem })
+        .then((res) => {
+          const filteredItems = res.data;
           setSearchedItems(filteredItems);
-        } else {
+        })
+        .catch((error) => {
+          console.error("Error fetching searched items:", error);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    } else {
+      axios
+        .post(`/api/dashboard?limit=8&page=${currentPage}`, {
+          category: props.category,
+        })
+        .then((res) => {
+          const allItems = res.data;
+          setItems(allItems);
           setSearchedItems(allItems);
-        }
-        console.log("In Items rendered on dashboard : ", res.data);
+        })
+        .catch((error) => {
+          console.error("Error fetching dashboard items:", error);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    }
 
-        axios
-          .get("/api/count")
-          .then((res) => {
-            console.log(res.data);
-            setFetchCount(res.data.count);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-
-        setLoading(false);
+    axios
+      .get("/api/count")
+      .then((res) => {
+        console.log(res.data);
+        setFetchCount(res.data.count);
       })
       .catch((err) => {
         console.log(err);
