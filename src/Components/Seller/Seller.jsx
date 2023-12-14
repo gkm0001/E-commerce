@@ -5,13 +5,9 @@ import { InfinitySpin } from "react-loader-spinner";
 
 import { useNavigate, useParams } from "react-router-dom";
 
-axios.defaults.baseURL = "https://dark-gray-butterfly-yoke.cyclic.app";
-// axios.defaults.baseURL = "http://localhost:5000";
-
 const SellForm = () => {
   const [itemName, setItemName] = useState("");
   const [itemDescription, setItemDescription] = useState("");
-  const [contactNumber, setContactNumber] = useState("");
   const [pickupLocation, setPickupLocation] = useState("");
   const [itemCost, setItemCost] = useState("");
   const [images, setImages] = useState([]);
@@ -52,7 +48,6 @@ const SellForm = () => {
     formData.append("itemCost", itemCost);
     formData.append("itemDescription", itemDescription);
     formData.append("category", category);
-    formData.append("contactNumber", contactNumber);
     formData.append("pickupLocation", pickupLocation);
 
     Array.from(images).forEach((file) => {
@@ -65,7 +60,6 @@ const SellForm = () => {
       setItemName("");
       setItemCost("");
       setItemDescription("");
-      setContactNumber("");
       setCategory("");
       setPickupLocation("");
       setImages([]);

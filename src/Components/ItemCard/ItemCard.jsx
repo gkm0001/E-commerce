@@ -55,7 +55,7 @@ const ItemCard = (props) => {
         <div className="prod-title px-3 md:p-4" onClick={moreInfo}>
           <p className="text-lg sm:text-xl text-gray-900 font-bold">
             {props.rest.itemName.length > 9
-              ? props.rest.itemName.slice(0, 9) + "..."
+              ? props.rest.itemName.slice(0, 15) + "..."
               : props.rest.itemName}
           </p>
           {/* <p className="text-gray-700">Provider: {props.rest.userName}</p> */}

@@ -10,9 +10,6 @@ export default function Items() {
   const [searchedItems, setSearchedItems] = useState([]);
   const { currentSearch } = useContext(SearchContext);
 
-  // axios.defaults.baseURL = "http://localhost:5000";
-  axios.defaults.baseURL = "https://dark-gray-butterfly-yoke.cyclic.app";
-
   // Fetch all items from the database
   useEffect(() => {
     axios

@@ -25,21 +25,25 @@ import Updation from "./Components/Updation/Updation.jsx";
 import { AuthContextProvider } from "./Contexts/AuthContext.jsx";
 import { ItemContextProvider } from "./Contexts/ItemContext.jsx";
 import Sell from "./Components/Sell/Sell.jsx";
+import axios from 'axios';
+
+// axios.defaults.baseURL = "http://localhost:5000";
+axios.defaults.baseURL = "https://dark-gray-butterfly-yoke.cyclic.app";
 
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
-      <Route path="" element={<Home category="" />} />
+      <Route path="" element={<Home key="base" category="" />} />
       <Route path="about" element={<AboutSection />} />
       {/* <Route path="contactus" element={<ContactSection />} /> */}
       <Route path="signup" element={<Signup />} />
       <Route path="login" element={<Login />} />
       <Route path="search/:searchedItem" element={<Home category="" search="yes" />} />
-      <Route path="books" element={<Home category="Books" />} />
-      <Route path="electronics" element={<Home category="Electronics" />} />
-      <Route path="furniture" element={<Home category="Furniture" />} />
-      <Route path="other" element={<Home category="Other"/>}/>
+      <Route path="books" element={<Home key="books" category="Books" />} />
+      <Route path="electronics" element={<Home key="electronics" category="Electronics" />} />
+      <Route path="furniture" element={<Home key="furniture" category="Furniture" />} />
+      <Route path="other" element={<Home key="other" category="Other"/>}/>
       <Route path="Sells" element={<Sell/>} />
       <Route path="updateItem/:id" element={<Updation />} />
       <Route path="verify-email" element={<Verification />} />
