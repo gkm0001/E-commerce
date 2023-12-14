@@ -105,6 +105,7 @@ export default function Home(props) {
   };
 
   const handlePageChange = (event, page) => {
+    setLoading(true);
     setCurrentPage(page);
   };
 
