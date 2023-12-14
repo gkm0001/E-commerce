@@ -420,9 +420,9 @@
  .contact-button {
        
       position: relative;
-       
       flex-direction: column;
       margin-top: 50px;
+      gap: 50px;
       
  }
 
@@ -442,7 +442,7 @@
  .whatsapp-btn{
      font-size: 20px;
        
-      margin: 5% 25%;  
+      margin: auto;  
       font-size: 15px;
       /* padding: 5px 25px;     */
  }
@@ -452,7 +452,7 @@
        
      font-size: 20px;
       
-      margin: 5% 25%; 
+      margin: auto; 
       font-size: 15px;
       /* padding: 5px 25px; */
 
