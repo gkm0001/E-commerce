@@ -30,7 +30,7 @@ export const SidebarData = [
   },
   {
     title: 'Sell',
-    path: '/Sell',
+    path: '/Sells',
     icon: <i class="fa-solid fa-otter"></i>,
     cName: 'nav-text'
   },
