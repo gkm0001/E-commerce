@@ -57,8 +57,11 @@ export default function Home(props) {
   // Fetch all items from the database
   useEffect(() => {
     axios
-      .get(`/api/dashboard?limit=8&page=${currentPage}`)
+      .post(`/api/dashboard?limit=8&page=${currentPage}`, {
+        category: props.category,
+      })
       .then((res) => {
+        console.log("API request made")
         const allItems = res.data;
         setItems(allItems);
 
