@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import ItemCard from "../ItemCard/ItemCard";
 import axios from "axios";
-// import { SearchContext } from "../Contexts/SearchContext";
 import { InfinitySpin } from "react-loader-spinner";
 
 export default function Items() {

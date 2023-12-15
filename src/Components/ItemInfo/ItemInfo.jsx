@@ -140,17 +140,15 @@ const ItemInfo = () => {
 
               {/* Provider Details */}
               <div className="mt-4">
-                <p className="font-semibold text-xl mb-1 md:mb-3">Provider Details :</p>
+                <p className="font-semibold text-xl mb-1 md:mb-3">
+                  Provider Details :
+                </p>
                 <p className="py-1 ">
                   {" "}
                   <FontAwesomeIcon icon={faUser} size="xl" />{" "}
                   <span className="mx-2"> {item.userName} </span>
                 </p>
-                {/* <p className="py-1 ">
-                  {" "}
-                  <FontAwesomeIcon icon={faPhoneVolume} fade size="xl" />{" "}
-                  <span className="mx-2"> {item.contactNumber}</span>
-                </p> */}
+
                 <p className="py-1 ">
                   <FontAwesomeIcon icon={faMapPin} flip size="2xl" />{" "}
                   <span className="mx-2">{item.pickupLocation}</span>

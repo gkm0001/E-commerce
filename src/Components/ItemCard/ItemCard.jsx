@@ -58,7 +58,6 @@ const ItemCard = (props) => {
               ? props.rest.itemName.slice(0, 15) + "..."
               : props.rest.itemName}
           </p>
-          {/* <p className="text-gray-700">Provider: {props.rest.userName}</p> */}
         </div>
         <div className="prod-info gap-0 p-1 px-3 md:p-4 flex flex-col md:flex-row md:justify-between md:items-center md:h-1/2 ">
           <p className="text-red-600 text-md mb-2 md:mb-4" onClick={moreInfo}>

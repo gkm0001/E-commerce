@@ -75,7 +75,9 @@ export default function Footer() {
 
           <div className="LinksBelow">
             <div className="copyrights">
-              <h1 className="text-below-footer">&copy;Copyright_student_bazaar</h1>
+              <h1 className="text-below-footer">
+                &copy;Copyright_student_bazaar
+              </h1>
             </div>
 
             <div className="handles">
@@ -88,14 +90,13 @@ export default function Footer() {
                 className="fa fa-telegram"
               ></Link>
               <Link
-                 to="https://www.linkedin.com/in/student-bazaar-1b68b92a3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                to="https://www.linkedin.com/in/student-bazaar-1b68b92a3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                 className="fa fa-linkedin"
               ></Link>
               <Link
                 to="https://instagram.com/student.bazaar?igshid=YWYwM2I1ZDdmOQ=="
                 className="fa fa-instagram"
               ></Link>
-             
             </div>
           </div>
         </div>
