@@ -32,6 +32,13 @@ function Sell() {
           home for your items!.
         </div>
       </p>
+
+      <div>
+               
+               
+
+      </div>
+
     </div>
   );
 }

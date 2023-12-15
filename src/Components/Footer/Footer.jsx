@@ -63,8 +63,8 @@ export default function Footer() {
                 <div className="text-red-500">Email</div>
                 <div>chhayanktarkar@gmail.com</div>
                 <div className="text-red-500">Location</div>
-                <div>Near IET college,</div>
-                <div>Jankipuram , Sitapur Road</div>
+                <div>Near Engineering college,</div>
+                <div>Sitapur Road</div>
               </div>
             </div>
           </div>

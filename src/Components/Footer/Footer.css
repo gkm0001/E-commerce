@@ -41,13 +41,14 @@ li {
 .LinksBelow {
   display: flex;
   align-items: row;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 1%;
 }
 
 .handles {
   display: flex;
-  gap: 30%;
+  gap: 3vw;
+  margin-right: 15px;
 }
 
 .copyrights {

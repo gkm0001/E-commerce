@@ -15,34 +15,7 @@ import axios from "axios";
 import ItemCard from "../ItemCard/ItemCard";
 import { SearchContext } from "../../Contexts/SearchContext";
 import Pagination from "@mui/material/Pagination";
-
-const App = () => {
-  useEffect(() => {
-    gsap.from(".shopAndSave h1", {
-      y: 30,
-      opacity: 0,
-      delay: 0.5,
-      duration: 0.9,
-      stagger: 0.4,
-    });
-
-    gsap.from(".left-writ-tex h3", {
-      y: 30,
-      opacity: 0,
-      delay: 0.5,
-      duration: 0.9,
-      stagger: 0.4,
-    });
-
-    gsap.from(".studentEssentail h4", {
-      y: 30,
-      opacity: 0,
-      delay: 0.5,
-      duration: 0.9,
-      stagger: 0.4,
-    });
-  }, []);
-};
+ 
 
 export default function Home(props) {
   const { searchedItem } = useParams();

@@ -486,10 +486,16 @@
   }
 }
 
+ 
+
 @media (max-width: 386px) {
   .join-whatsapp-group {
     font-size: 10px;
   }
+
+  .wtext, .tText{
+   margin-top: 4%;
+}
 
   .whatsapp-btn {
     font-size: 10px;
