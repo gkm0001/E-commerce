@@ -39,7 +39,7 @@ function Sell() {
           <div className="mb-5 sm:mb-0">
             <div className="  bg-red-700 hover:bg-red-800 text-black font-bold py-2 px-4 rounded cursor-pointer">
 
-                <a  target="_blank" rel="noopener noreferrer" className="flex" >
+                <a href={"https://chat.whatsapp.com/BwwqNTFZz8O7u0JvUE845Y"} target="_blank" rel="noopener noreferrer" className="flex" >
                   <FaWhatsapp size={30} style={{ marginRight: '5px' }} />
                   <span>Join Whatsapp</span>
                 </a>

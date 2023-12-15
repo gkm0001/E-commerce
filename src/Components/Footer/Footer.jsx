@@ -80,20 +80,21 @@ export default function Footer() {
               </h1>
             </div>
 
+
             <div className="handles">
-              <Link
+              <Link target="_blank"
                 to="https://chat.whatsapp.com/DLf9wlGi7T7LQCDGrHllcS"
                 className="fa fa-whatsapp"
               ></Link>
-              <Link
+              <Link target="_blank"
                 to="https://t.me/storeiet"
                 className="fa fa-telegram"
               ></Link>
-              <Link
+              <Link target="_blank"
                 to="https://www.linkedin.com/in/student-bazaar-1b68b92a3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                 className="fa fa-linkedin"
               ></Link>
-              <Link
+              <Link target="_blank"
                 to="https://instagram.com/student.bazaar?igshid=YWYwM2I1ZDdmOQ=="
                 className="fa fa-instagram"
               ></Link>
