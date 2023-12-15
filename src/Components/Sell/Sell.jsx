@@ -1,9 +1,10 @@
 import React from "react";
+import {FaWhatsapp , FaTelegram} from 'react-icons/fa'
 
 function Sell() {
   return (
     <div className="bg-black ">
-      <p>
+      <div>
         <p className="text-2xl font-extrabold text-red-700 py-5">
           Welcome to Student Bazaar, to list any product follow these steps:
         </p>
@@ -31,11 +32,36 @@ function Sell() {
           Connect with fellow students, declutter your space, and find a new
           home for your items!.
         </div>
-      </p>
+      </div>
+
+
+      <div className="flex flex-col sm:flex-row justify-evenly items-center py-7">
+          <div className="mb-5 sm:mb-0">
+            <div className="  bg-red-700 hover:bg-red-800 text-black font-bold py-2 px-4 rounded cursor-pointer">
+
+                <a  target="_blank" rel="noopener noreferrer" className="flex" >
+                  <FaWhatsapp size={30} style={{ marginRight: '5px' }} />
+                  <span>Join Whatsapp</span>
+                </a>
+                
+            </div>
+          </div>
+
+          <div >
+              <div className="bg-red-700 hover:bg-red-800 text-black font-bold py-2 px-4 rounded cursor-pointer">
+
+              <a  target="_blank" rel="noopener noreferrer" className="flex" >
+                <FaTelegram size={30} style={{ marginRight: '5px' }} />
+                <span>Join Telegram</span>
+              </a>
+                  
+                </div>
+          </div>
+      </div>
 
       <div>
                
-               
+
 
       </div>
 
