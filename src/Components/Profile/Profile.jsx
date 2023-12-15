@@ -132,7 +132,11 @@ const Profile = () => {
                             </button>
                           </div>
                         </div>
-                      ) : (
+                         
+                      ))} 
+                      </div>
+                      
+                      ): (
                         <div>No items to display</div>
                       )}
                     </div>
