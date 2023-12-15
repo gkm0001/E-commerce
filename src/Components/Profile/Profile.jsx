@@ -11,6 +11,7 @@ const Profile = () => {
   const [user, setUser] = useState();
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [listingLoading, setListingLoading] = useState(true);
   const { currentUser } = useContext(AuthContext);
 
   // Fetch user details and listed items from the database
@@ -24,7 +25,7 @@ const Profile = () => {
       .post("/api/listedItemsByUser", { token: currentUser.token })
       .then((res) => {
         setItems(res.data);
-        setLoading(false);
+        setListingLoading(false);
       });
   }, []);
 
@@ -93,13 +94,18 @@ const Profile = () => {
                 <div>Loading user data...</div>
               )}
 
-              {currentUser.token ===
-                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjIxMDA1MjE1MjAwNDFAaWV0bHVja25vdy5hYy5pbiIsImlhdCI6MTcwMTEwODc5MiwiZXhwIjoxNzAxMTk1MTkyfQ.tuoLoyp6HZLgUTqtQy1QTTA5P4Qlc_1uKGO0RRwYtzM" && (
-                <div className="mt-2 text-2xl text-gray-800 font-semibold">
-                  <span>Your Listings : </span>
+              {listingLoading ? (
+                <div className="flex items-center justify-center h-96">
+                  <InfinitySpin width="200" color="#424242" />
                 </div>
-              )}
-
+              ) : (
+                <>
+                  {currentUser.token ===
+                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjIxMDA1MjE1MjAwNDFAaWV0bHVja25vdy5hYy5pbiIsImlhdCI6MTcwMTEwODc5MiwiZXhwIjoxNzAxMTk1MTkyfQ.tuoLoyp6HZLgUTqtQy1QTTA5P4Qlc_1uKGO0RRwYtzM" && (
+                    <div className="mt-2 text-2xl text-gray-800 font-semibold">
+                      <span>Your Listings : </span>
+                    </div>
+                  )}
               {currentUser.token ===
                 "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjIxMDA1MjE1MjAwNDFAaWV0bHVja25vdy5hYy5pbiIsImlhdCI6MTcwMTEwODc5MiwiZXhwIjoxNzAxMTk1MTkyfQ.tuoLoyp6HZLgUTqtQy1QTTA5P4Qlc_1uKGO0RRwYtzM" && (
                 <div>
@@ -126,12 +132,12 @@ const Profile = () => {
                             </button>
                           </div>
                         </div>
-                      ))}
+                      ) : (
+                        <div>No items to display</div>
+                      )}
                     </div>
-                  ) : (
-                    <div>No items to display</div>
                   )}
-                </div>
+                </>
               )}
             </div>
           </div>
