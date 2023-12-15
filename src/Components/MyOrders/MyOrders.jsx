@@ -14,22 +14,23 @@ const Profile = () => {
 
   // Fetch user details and listed items from the database
   useEffect(() => {
-    axios.post("/api/showMyOrders",{token:currentUser.token})
+    axios
+      .post("/api/showMyOrders", { token: currentUser.token })
 
-    .then((res) => {
-      console.log("My Orders are : ",res.data);
-      setItems(res.data);
-      setLoading(false);
-    });
+      .then((res) => {
+        console.log("My Orders are : ", res.data);
+        setItems(res.data);
+        setLoading(false);
+      });
   }, []);
 
-//   Delete an item from the database
-    const deleteItem = (id) => {
-      axios.post("/api/deleteOrder", { id: id }).then((res) => {
-        console.log(res.data);
-        setItems(items.filter((item) => item._id !== id));
-      });
-    };
+  //   Delete an item from the database
+  const deleteItem = (id) => {
+    axios.post("/api/deleteOrder", { id: id }).then((res) => {
+      console.log(res.data);
+      setItems(items.filter((item) => item._id !== id));
+    });
+  };
 
   return (
     <div className="bg-gray-800">
@@ -45,7 +46,6 @@ const Profile = () => {
         ) : (
           <div>
             <div className="my-7 mx-auto w-[97%] sm:w-[75%] md:w-[70%] text-xl text-red-600 font-semibold flex flex-col gap-7 p-4 sm:p-10 border-2 border-solid border-red-600 rounded-xl ">
-
               <div className="mt-2 text-2xl text-gray-800 font-semibold">
                 <span>Orders : </span>
               </div>

@@ -52,7 +52,7 @@ const SellForm = () => {
       });
       setBlobURLs(theBlobURLs);
       console.log("blobURLs", theBlobURLs);
-      
+
       setLoading(false);
     });
   }, []);
@@ -101,7 +101,7 @@ const SellForm = () => {
     });
     navigate("/");
     try {
-        console.log()
+      console.log();
       const response = await axios.post("/api/updateItem", formData);
       console.log(response);
 

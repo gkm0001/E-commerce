@@ -25,11 +25,10 @@ import Updation from "./Components/Updation/Updation.jsx";
 import { AuthContextProvider } from "./Contexts/AuthContext.jsx";
 import { ItemContextProvider } from "./Contexts/ItemContext.jsx";
 import Sell from "./Components/Sell/Sell.jsx";
-import axios from 'axios';
+import axios from "axios";
 
 // axios.defaults.baseURL = "http://localhost:5000";
 axios.defaults.baseURL = "https://dark-gray-butterfly-yoke.cyclic.app";
-
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -39,12 +38,21 @@ const router = createBrowserRouter(
       {/* <Route path="contactus" element={<ContactSection />} /> */}
       <Route path="signup" element={<Signup />} />
       <Route path="login" element={<Login />} />
-      <Route path="search/:searchedItem" element={<Home category="" search="yes" />} />
+      <Route
+        path="search/:searchedItem"
+        element={<Home category="" search="yes" />}
+      />
       <Route path="books" element={<Home key="books" category="Books" />} />
-      <Route path="electronics" element={<Home key="electronics" category="Electronics" />} />
-      <Route path="furniture" element={<Home key="furniture" category="Furniture" />} />
-      <Route path="other" element={<Home key="other" category="Other"/>}/>
-      <Route path="Sells" element={<Sell/>} />
+      <Route
+        path="electronics"
+        element={<Home key="electronics" category="Electronics" />}
+      />
+      <Route
+        path="furniture"
+        element={<Home key="furniture" category="Furniture" />}
+      />
+      <Route path="other" element={<Home key="other" category="Other" />} />
+      <Route path="Sells" element={<Sell />} />
       <Route path="updateItem/:id" element={<Updation />} />
       <Route path="verify-email" element={<Verification />} />
       <Route path="profile" element={<Profile />} />
@@ -53,7 +61,6 @@ const router = createBrowserRouter(
       <Route path="showOrders" element={<Orders />} />
       <Route path="showMyOrders" element={<MyOrders />} />
       <Route path="myOrderDetails/:id" element={<OrderInfo />} />
-      
     </Route>
   )
 );

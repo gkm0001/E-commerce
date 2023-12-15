@@ -105,36 +105,6 @@ export default function Header() {
 
           {/* <!-- side section of bar --> */}
           <div className="side-icons-section">
-            {/* <div className="search-container p-0 search ">
-              <img
-                src={SearchImg}
-                alt="Search"
-                onClick={toggleSearch}
-                className="cursor-pointer"
-              />
-              {isSearchVisible && (
-                <div className="search-input absolute top-0 right-0 p-2 flex flex-row bg-slate-950">
-                  <input
-                    type="text"
-                    placeholder="Enter your search"
-                    value={search}
-                    onChange={(e) => setSearch(e.target.value)}
-                    className="p-2 border rounded mr-2"
-                  />
-                  <button
-                    type="submit"
-                    className="search-btn"
-                    onClick={searchHandler}
-                  >
-                    <i className="fa-solid fa-search"></i>
-                  </button>
-                  <button onClick={toggleSearch} className=" bg-red-700">
-                    <i class="fa-solid fa-xmark"></i>
-                  </button>
-                </div>
-              )}
-            </div> */}
-
             {currentUser ? (
               <Link to="/profile" className="Login">
                 <img src={LoginImg} className="pb-1" alt="" />

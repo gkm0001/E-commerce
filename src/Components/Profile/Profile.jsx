@@ -106,34 +106,31 @@ const Profile = () => {
                       <span>Your Listings : </span>
                     </div>
                   )}
-
-                  {currentUser.token ===
-                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjIxMDA1MjE1MjAwNDFAaWV0bHVja25vdy5hYy5pbiIsImlhdCI6MTcwMTEwODc5MiwiZXhwIjoxNzAxMTk1MTkyfQ.tuoLoyp6HZLgUTqtQy1QTTA5P4Qlc_1uKGO0RRwYtzM" && (
-                    <div>
-                      {items.length > 0 ? (
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-                          {items.map((item) => (
-                            <div
-                              key={item._id}
-                              className="bg-white rounded-lg shadow-md p-4"
+              {currentUser.token ===
+                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjIxMDA1MjE1MjAwNDFAaWV0bHVja25vdy5hYy5pbiIsImlhdCI6MTcwMTEwODc5MiwiZXhwIjoxNzAxMTk1MTkyfQ.tuoLoyp6HZLgUTqtQy1QTTA5P4Qlc_1uKGO0RRwYtzM" && (
+                <div>
+                  {items.length > 0 ? (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+                      {items.map((item) => (
+                        <div
+                          key={item._id}
+                          className="bg-white rounded-lg shadow-md p-4"
+                        >
+                          <ItemCard rest={item} width="full" />
+                          <div className="flex justify-end">
+                            <button
+                              onClick={() => updateItem(item._id)}
+                              className="bg-green-500 hover:bg-green-800 text-white text-sm py-1 px-4 rounded-lg w-fit mx-auto mt-3"
                             >
-                              <ItemCard rest={item} width="full" />
-                              <div className="flex justify-end">
-                                <button
-                                  onClick={() => updateItem(item._id)}
-                                  className="bg-green-500 hover:bg-green-800 text-white text-sm py-1 px-4 rounded-lg w-fit mx-auto mt-3"
-                                >
-                                  Update Item
-                                </button>
-                                <button
-                                  onClick={() => deleteItem(item._id)}
-                                  className="bg-red-500 text-white text-sm py-1 px-4 rounded-lg w-fit mx-auto mt-3"
-                                >
-                                  Delete Item
-                                </button>
-                              </div>
-                            </div>
-                          ))}
+                              Update Item
+                            </button>
+                            <button
+                              onClick={() => deleteItem(item._id)}
+                              className="bg-red-500 text-white text-sm py-1 px-4 rounded-lg w-fit mx-auto mt-3"
+                            >
+                              Delete Item
+                            </button>
+                          </div>
                         </div>
                       ) : (
                         <div>No items to display</div>
