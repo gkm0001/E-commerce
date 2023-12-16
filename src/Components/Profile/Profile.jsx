@@ -22,7 +22,7 @@ const Profile = () => {
       setLoading(false);
     });
     axios
-      .post("/api/listedItemsByUser", { token: currentUser.token })
+      .get("/api/itemsListedByAdmin")
       .then((res) => {
         setItems(res.data);
         setListingLoading(false);
