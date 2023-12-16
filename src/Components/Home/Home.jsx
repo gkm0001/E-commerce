@@ -15,6 +15,7 @@ import axios from "axios";
 import ItemCard from "../ItemCard/ItemCard";
 import { SearchContext } from "../../Contexts/SearchContext";
 import Pagination from "@mui/material/Pagination";
+import { FaWhatsapp, FaTelegram } from "react-icons/fa";
  
 
 export default function Home(props) {
@@ -116,7 +117,33 @@ export default function Home(props) {
             </div>
           </div>
 
-          <div className="contact-button">
+          {/* /// */}
+
+          <div className="flex flex-col sm:flex-row justify-evenly items-center py-7">
+          <div className="mb-5 sm:mb-0">
+            <div className="  bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded cursor-pointer">
+
+                <a href={"https://chat.whatsapp.com/DLf9wlGi7T7LQCDGrHllcS"} target="_blank" rel="noopener noreferrer" className="flex" >
+                  <FaWhatsapp size={40} style={{ marginRight: '5px' }} />
+                  <span className="text-2xl">Join Whatsapp Group</span>
+                </a>
+                
+            </div>
+          </div>
+
+          <div >
+              <div className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded cursor-pointer ">
+
+              <a href={"https://t.me/storeiet"} target="_blank" rel="noopener noreferrer" className="flex" >
+                <FaTelegram size={40} style={{ marginRight: '5px' }} />
+                <span className="text-2xl"> Join Telegram Group</span>
+              </a>
+                  
+                </div>
+          </div>
+      </div>
+
+          {/* <div className="contact-button">
             <div className="join-whatsapp-group">
               <button className="whatsapp-btn">
                 <div className="wi35px">
@@ -142,14 +169,14 @@ export default function Home(props) {
                 </div>
               </button>
             </div>
-          </div>
+          </div> */}
         </>
       ) : (
         <></>
       )}
 
       <div className="text-below-btn content" ref={contentRef}>
-        <h3>Available Listings :</h3>
+        <h3>Available Products :</h3>
       </div>
 
       {loading ? (
@@ -176,7 +203,7 @@ export default function Home(props) {
 
       <div className="flex items-center justify-center">
         <Pagination
-          count={Math.ceil(fetchCount / 8)}
+          count={Math.ceil(fetchCount / 10)}
           page={currentPage}
           onChange={handlePageChange}
           color="primary"

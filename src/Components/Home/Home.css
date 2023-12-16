@@ -2,6 +2,7 @@
   width: 100%;
   height: 70vh;
   display: flex;
+  margin-bottom: 4vh;
 }
 
 .main-left {
@@ -462,7 +463,7 @@
   .text-lower {
     margin-top: 15px;
     margin-left: 15px;
-    font-size: medium;
+    font-size: 4vw;
     font-weight: 500;
   }
 
@@ -481,7 +482,7 @@
   .text-lower-right {
     margin-top: 15px;
     margin-left: 10px;
-    font-size: medium;
+    font-size: 4vw;
     font-weight: 500;
   }
 }
@@ -609,11 +610,11 @@
   }
 
   .text-lower {
-    font-size: 8px;
+    font-size: 4vw;
   }
 
   .text-lower-right {
-    font-size: 8px;
+    font-size: 4vw;
     margin-left: 30px;
   }
 

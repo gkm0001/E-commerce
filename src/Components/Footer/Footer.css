@@ -34,7 +34,7 @@ li {
 .item10 {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
   color: white;
 }
 
@@ -97,7 +97,7 @@ li {
 
 @media (max-width: 820px), only screen and (width: 912px) and (height: 1368px) {
   .content1 {
-    gap: 30px;
+    gap: 20px;
   }
 
   /* .handles{
@@ -122,9 +122,9 @@ li {
     /* margin-left: 7%; */
   }
 
-  .logo2 span {
+  /* .logo2 span {
     margin-left: 5px;
-  }
+  } */
 
   .item10 {
     line-height: 1.6;
@@ -145,7 +145,7 @@ li {
 }
 @media (max-width: 386px) {
   .logo2 {
-    font-size: 15px;
+    font-size: 10px;
   }
   .handles {
     margin-left: 0;

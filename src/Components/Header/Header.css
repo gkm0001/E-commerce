@@ -86,7 +86,7 @@ header {
   align-items: center;
 }
 
-span {
+a span {
   margin-left: 16px;
 }
 
@@ -103,6 +103,7 @@ span {
   width: 22%;
   display: flex;
   margin: 0 2%;
+  margin-left: 13px;
 }
 .student-bazaar-logo-left {
   font-size: 3vw;
@@ -234,6 +235,7 @@ span {
 
   .menu-upper {
     display: flex;
+    margin-left: 7px;
   }
   .menu img {
     align-items: center;

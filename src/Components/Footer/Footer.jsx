@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="footer1">
           <div className="names">
             <div className="logo2">
-              Student <span style={{ color: "white" }}>Bazaar</span>
+              Student<span style={{ color: "white" }}>Bazaar</span>
             </div>
 
             <div className="content1">
