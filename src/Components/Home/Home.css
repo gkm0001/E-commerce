@@ -274,12 +274,14 @@
 
 .text-lower {
   color: white;
+  font-weight: 700;
 }
 
 .text-lower-right {
   position: relative;
   margin-left: 2vw;
   color: white;
+  font-weight: 700;
 }
 .right-bottom-div h3 {
   margin-left: 35%;
