@@ -106,7 +106,7 @@ export default function Footer() {
           </div>
 
           <div className="text-white flex items-center justify-center  mb-3 text-xl">
-           Made By <FaLaptop className="ml-2" /> <b><a href="www.webblitz.dev" className="text-white">WebBlitz</a></b>
+           Made By <FaLaptop className="ml-2" /> <b><Link to="https://www.webblitz.dev/" className="text-white" target='_blank'>WebBlitz</Link></b>
           </div>
 
      
