@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Footer.css";
+import { FaLaptop } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -75,8 +76,10 @@ export default function Footer() {
 
           <div className="LinksBelow">
             <div className="copyrights">
-              <h1 className="text-below-footer">
-                &copy;Copyright_student_bazaar
+              <h1 className="text-below-footer text-white">
+               
+                   Copyright&copy;StudentBazaar
+                  
               </h1>
             </div>
 
@@ -99,7 +102,15 @@ export default function Footer() {
                 className="fa fa-instagram"
               ></Link>
             </div>
+            
           </div>
+
+          <div className="text-white flex items-center justify-center  mb-3 text-xl">
+           Made By <FaLaptop className="ml-2" /> <b><a href="www.webblitz.dev" className="text-white">WebBlitz</a></b>
+          </div>
+
+     
+                
         </div>
       </footer>
     </>

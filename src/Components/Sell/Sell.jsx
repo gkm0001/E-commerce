@@ -4,7 +4,7 @@ import {FaWhatsapp , FaTelegram} from 'react-icons/fa'
 function Sell() {
   return (
     <div className="bg-black ">
-      <div>
+      <div className="ml-6">
         <p className="text-2xl font-extrabold text-red-700 py-5">
           Welcome to Student Bazaar, to list any product follow these steps:
         </p>
