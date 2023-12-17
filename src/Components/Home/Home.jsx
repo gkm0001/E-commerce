@@ -111,7 +111,7 @@ export default function Home(props) {
 
   return (
     <>
-      {props.category === "" || props.category === null ? (
+      {(props.category === "" || props.category=== null) && !searchedItem  ? (
         <>
           <div className="main">
             <div className="hero">

@@ -27,6 +27,9 @@ import { ItemContextProvider } from "./Contexts/ItemContext.jsx";
 import Sell from "./Components/Sell/Sell.jsx";
 import axios from "axios";
 
+import AdminListings from "./Components/AdminListings/AdminListings.jsx";
+
+
 // axios.defaults.baseURL = "http://localhost:5000";
 axios.defaults.baseURL = "https://dark-gray-butterfly-yoke.cyclic.app";
 
@@ -61,6 +64,12 @@ const router = createBrowserRouter(
       <Route path="showOrders" element={<Orders />} />
       <Route path="showMyOrders" element={<MyOrders />} />
       <Route path="myOrderDetails/:id" element={<OrderInfo />} />
+
+
+      <Route path="adminListings" element={<AdminListings />} />
+
+
+
     </Route>
   )
 );
