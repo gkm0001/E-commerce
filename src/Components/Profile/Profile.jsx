@@ -17,16 +17,15 @@ const Profile = () => {
   // Fetch user details and listed items from the database
   useEffect(() => {
     axios.post("/api/profile", { token: currentUser.token }).then((res) => {
-      console.log(res.data);
       setUser(res.data);
       setLoading(false);
     });
-    axios
-      .post("/api/listedItemsByUser", { token: currentUser.token })
-      .then((res) => {
-        setItems(res.data);
-        setListingLoading(false);
-      });
+    // axios
+    //   .get("/api/itemsListedByAdmin")
+    //   .then((res) => {
+    //     setItems(res.data);
+    //     setListingLoading(false);
+    //   });
   }, []);
 
   // Delete an item from the database
@@ -92,56 +91,6 @@ const Profile = () => {
                 </div>
               ) : (
                 <div>Loading user data...</div>
-              )}
-
-              {listingLoading ? (
-                <div className="flex items-center justify-center h-96">
-                  <InfinitySpin width="200" color="#424242" />
-                </div>
-              ) : (
-                <>
-                  {currentUser.token ===
-                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjIxMDA1MjE1MjAwNDFAaWV0bHVja25vdy5hYy5pbiIsImlhdCI6MTcwMTEwODc5MiwiZXhwIjoxNzAxMTk1MTkyfQ.tuoLoyp6HZLgUTqtQy1QTTA5P4Qlc_1uKGO0RRwYtzM" && (
-                    <div className="mt-2 text-2xl text-gray-800 font-semibold">
-                      <span>Your Listings : </span>
-                    </div>
-                  )}
-              {currentUser.token ===
-                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjIxMDA1MjE1MjAwNDFAaWV0bHVja25vdy5hYy5pbiIsImlhdCI6MTcwMTEwODc5MiwiZXhwIjoxNzAxMTk1MTkyfQ.tuoLoyp6HZLgUTqtQy1QTTA5P4Qlc_1uKGO0RRwYtzM" && (
-                <div>
-                  {items.length > 0 ? (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-                      {items.map((item) => (
-                        <div
-                          key={item._id}
-                          className="bg-white rounded-lg shadow-md p-4"
-                        >
-                          <ItemCard rest={item} width="full" />
-                          <div className="flex justify-end">
-                            <button
-                              onClick={() => updateItem(item._id)}
-                              className="bg-green-500 hover:bg-green-800 text-white text-sm py-1 px-4 rounded-lg w-fit mx-auto mt-3"
-                            >
-                              Update Item
-                            </button>
-                            <button
-                              onClick={() => deleteItem(item._id)}
-                              className="bg-red-500 text-white text-sm py-1 px-4 rounded-lg w-fit mx-auto mt-3"
-                            >
-                              Delete Item
-                            </button>
-                          </div>
-                        </div>
-                         
-                      ))} 
-                      </div>
-                      
-                      ): (
-                        <div>No items to display</div>
-                      )}
-                    </div>
-                  )}
-                </>
               )}
             </div>
           </div>
