@@ -2,6 +2,7 @@
   width: 100%;
   height: 70vh;
   display: flex;
+  margin-bottom: 4vh;
 }
 
 .main-left {
@@ -273,12 +274,14 @@
 
 .text-lower {
   color: white;
+  font-weight: 700;
 }
 
 .text-lower-right {
   position: relative;
   margin-left: 2vw;
   color: white;
+  font-weight: 700;
 }
 .right-bottom-div h3 {
   margin-left: 35%;
@@ -462,7 +465,7 @@
   .text-lower {
     margin-top: 15px;
     margin-left: 15px;
-    font-size: medium;
+    font-size: 4vw;
     font-weight: 500;
   }
 
@@ -481,15 +484,21 @@
   .text-lower-right {
     margin-top: 15px;
     margin-left: 10px;
-    font-size: medium;
+    font-size: 4vw;
     font-weight: 500;
   }
 }
+
+ 
 
 @media (max-width: 386px) {
   .join-whatsapp-group {
     font-size: 10px;
   }
+
+  .wtext, .tText{
+   margin-top: 4%;
+}
 
   .whatsapp-btn {
     font-size: 10px;
@@ -603,11 +612,11 @@
   }
 
   .text-lower {
-    font-size: 8px;
+    font-size: 4vw;
   }
 
   .text-lower-right {
-    font-size: 8px;
+    font-size: 4vw;
     margin-left: 30px;
   }
 
