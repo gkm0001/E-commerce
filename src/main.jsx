@@ -27,7 +27,7 @@ import { ItemContextProvider } from "./Contexts/ItemContext.jsx";
 import Sell from "./Components/Sell/Sell.jsx";
 import axios from "axios";
 
-import AdminListings from "./Components/AdminListings/AdminListings.jsx";
+import {AdminListings} from "./Components/AdminListings/AdminListings.jsx";
 
 
 // axios.defaults.baseURL = "http://localhost:5000";
@@ -66,7 +66,7 @@ const router = createBrowserRouter(
       <Route path="myOrderDetails/:id" element={<OrderInfo />} />
 
 
-      <Route path="adminListings" element={<AdminListings />} />
+      <Route path="adminListings" element={<AdminListings key="adminListings" />} />
 
 
 

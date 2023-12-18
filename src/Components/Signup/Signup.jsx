@@ -8,6 +8,7 @@ const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState();
+  const [address, setAddress] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -20,15 +21,17 @@ const Signup = () => {
     console.log("Name : ", name);
     console.log("Email : ", email);
     console.log("Phone : ", phone);
+    console.log("Address : ", address)
     console.log("Password : ", password);
     axios
-      .post("/api/auth/signup", { name, email, phone, password })
+      .post("/api/auth/signup", { name, email, phone, address, password })
 
       .then((res) => {
         alert(res.data.message);
         setName("");
         setEmail("");
         setPhone("");
+        setAddress("");
         setPassword("");
       })
       .catch((err) => {
@@ -38,6 +41,7 @@ const Signup = () => {
           setName("");
           setEmail("");
           setPhone("");
+          setAddress("");
           setPassword("");
         } else if (err.response && err.response.status === 401) {
           alert("Invalid Email");
@@ -75,6 +79,13 @@ const Signup = () => {
             placeholder="Enter your phone number"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
+          />
+          <Input
+            label="Address"
+            type="text"
+            placeholder="Enter your address"
+            value={address}
+          onChange={(e) => setAddress(e.target.value)}
           />
           <Input
             label="Password"
