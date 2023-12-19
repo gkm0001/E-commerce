@@ -220,13 +220,13 @@ export default function Home(props) {
         </div>
         <div className="image-grid2">
           <div className="image-grid21">
-          <a href="https://studentbazaar.in/electronics" target="_blank" rel="noopener noreferrer">
+          <a href="https://studentbazaar.in/search/calculator" target="_blank" rel="noopener noreferrer">
           <img src={calculator} alt="" />
           </a>
             
           </div>
           <div className="image-grid22">
-          <a href="https://studentbazaar.in/electronics" target="_blank" rel="noopener noreferrer">
+          <a href="https://studentbazaar.in/search/watch" target="_blank" rel="noopener noreferrer">
           <img src={watch} alt="watch" />
           </a>
           </div>
