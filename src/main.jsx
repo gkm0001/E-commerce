@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import {
   Route,
   RouterProvider,
   Routes,
+  Navigate,
+  BrowserRouter,
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
@@ -24,61 +26,99 @@ import OrderInfo from "./Components/OrderInfo/OrderInfo.jsx";
 import Updation from "./Components/Updation/Updation.jsx";
 import { AuthContextProvider } from "./Contexts/AuthContext.jsx";
 import { ItemContextProvider } from "./Contexts/ItemContext.jsx";
+import { AdminListings } from "./Components/AdminListings/AdminListings.jsx";
 import Sell from "./Components/Sell/Sell.jsx";
 import axios from "axios";
 
-import {AdminListings} from "./Components/AdminListings/AdminListings.jsx";
+import { AuthContext } from "./Contexts/AuthContext.jsx";
 
+const App = () => {
+  const { currentUser } = useContext(AuthContext);
 
-// axios.defaults.baseURL = "http://localhost:5000";
-axios.defaults.baseURL = "https://dark-gray-butterfly-yoke.cyclic.app";
+  const RequireAuth = ({ children }) => {
+    return currentUser &&
+      currentUser.token ===
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjIxMDA1MjE1MjAwNDFAaWV0bHVja25vdy5hYy5pbiIsImlhdCI6MTcwMTEwODc5MiwiZXhwIjoxNzAxMTk1MTkyfQ.tuoLoyp6HZLgUTqtQy1QTTA5P4Qlc_1uKGO0RRwYtzM" ? (
+      children
+    ) : (
+      <Navigate to="/login" />
+    );
+  };
+  // Set up axios base URL
+  // axios.defaults.baseURL = "http://localhost:5000";
+  axios.defaults.baseURL = "https://dark-gray-butterfly-yoke.cyclic.app";
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/" element={<Layout />}>
-      <Route path="" element={<Home key="base" category="" />} />
-      <Route path="about" element={<AboutSection />} />
-      {/* <Route path="contactus" element={<ContactSection />} /> */}
-      <Route path="signup" element={<Signup />} />
-      <Route path="login" element={<Login />} />
-      <Route
-        path="search/:searchedItem"
-        element={<Home category="" search="yes" />}
-      />
-      <Route path="books" element={<Home key="books" category="Books" />} />
-      <Route
-        path="electronics"
-        element={<Home key="electronics" category="Electronics" />}
-      />
-      <Route
-        path="furniture"
-        element={<Home key="furniture" category="Furniture" />}
-      />
-      <Route path="other" element={<Home key="other" category="Other" />} />
-      <Route path="Sells" element={<Sell />} />
-      <Route path="updateItem/:id" element={<Updation />} />
-      <Route path="verify-email" element={<Verification />} />
-      <Route path="profile" element={<Profile />} />
-      <Route path="sell" element={<Seller />} />
-      <Route path="item/:id" element={<ItemInfo />} />
-      <Route path="showOrders" element={<Orders />} />
-      <Route path="showMyOrders" element={<MyOrders />} />
-      <Route path="myOrderDetails/:id" element={<OrderInfo />} />
-
-
-      <Route path="adminListings" element={<AdminListings key="adminListings" />} />
-
-
-
-    </Route>
-  )
-);
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="" element={<Home key="base" category="" />} />
+          <Route path="about" element={<AboutSection />} />
+          <Route path="signup" element={<Signup />} />
+          <Route path="login" element={<Login />} />
+          <Route
+            path="search/:searchedItem"
+            element={<Home category="" search="yes" />}
+          />
+          <Route path="books" element={<Home key="books" category="Books" />} />
+          <Route
+            path="electronics"
+            element={<Home key="electronics" category="Electronics" />}
+          />
+          <Route
+            path="furniture"
+            element={<Home key="furniture" category="Furniture" />}
+          />
+          <Route path="other" element={<Home key="other" category="Other" />} />
+          <Route path="Sells" element={<Sell />} />
+          <Route
+            path="updateItem/:id"
+            element={
+              <RequireAuth>
+                <Updation />
+              </RequireAuth>
+            }
+          />
+          <Route path="verify-email" element={<Verification />} />
+          <Route path="profile" element={<Profile />} />
+          <Route
+            path="sell"
+            element={
+              <RequireAuth>
+                <Seller />
+              </RequireAuth>
+            }
+          />
+          <Route path="item/:id" element={<ItemInfo />} />
+          <Route
+            path="showOrders"
+            element={
+              <RequireAuth>
+                <Orders />
+              </RequireAuth>
+            }
+          />
+          <Route path="showMyOrders" element={<MyOrders />} />
+          <Route path="myOrderDetails/:id" element={<OrderInfo />} />
+          <Route
+            path="adminListings"
+            element={
+              <RequireAuth>
+                <AdminListings key="adminListings" />
+              </RequireAuth>
+            }
+          />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthContextProvider>
       <ItemContextProvider>
-        <RouterProvider router={router} />
+        <App />
       </ItemContextProvider>
     </AuthContextProvider>
   </React.StrictMode>

@@ -10,6 +10,7 @@ const Login = () => {
   const { dispatch } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false); // New state for password visibility
   const [loading, setLoading] = useState(false);
 
   // Function to handle login
@@ -18,7 +19,6 @@ const Login = () => {
     setLoading(true);
     axios
       .post("/api/auth/login", { email, password })
-
       .then((res) => {
         dispatch({
           type: "LOGIN",
@@ -49,13 +49,22 @@ const Login = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <Input
-            label="Password"
-            type="password"
-            placeholder="Enter your password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+          <div className="flex flex-ro items-center justify-between">
+            <Input
+              label="Password"
+              type={showPassword ? "text" : "password"}
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+
+            <i
+              className={`fa-solid fa-eye-slash cursor-pointer ${
+                showPassword ? "fa-eye" : "fa-eye-slash"
+              }`}
+              onClick={() => setShowPassword(!showPassword)}
+            ></i>
+          </div>
           <div className="text-center">
             <BlueButton val="Login" loading={loading} />
           </div>

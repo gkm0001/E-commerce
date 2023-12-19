@@ -79,6 +79,10 @@ const Profile = () => {
                     <span className="text-gray-800">Phone : </span>
                     <span className="break-words">{user.phone}</span>
                   </div>
+                  <div className="text-xl text-red-600 font-semibold">
+                    <span className="text-gray-800">Address : </span>
+                    <span className="break-words">{user.address}</span>
+                  </div>
 
                   <div className=" m-3.5">
                     <button

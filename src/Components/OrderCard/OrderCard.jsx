@@ -48,6 +48,9 @@ const OrderCard = (props) => {
               <p className="text-gray-700">
                 Buyer Phone: {props.rest.clientNumber}
               </p>
+              <p className="text-gray-700">
+                Buyer Address: {props.rest.clientAddress}
+              </p>
             </>
           )}
         </div>

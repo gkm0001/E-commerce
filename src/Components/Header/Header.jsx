@@ -57,14 +57,29 @@ export default function Header() {
                       </Link>
                     </li>
                     {SidebarData.map((item, index) => {
-                      return (
-                        <li key={index} className={item.cName}>
-                          <Link to={item.path}>
-                            {item.icon}
-                            <span>{item.title}</span>
-                          </Link>
-                        </li>
-                      );
+                      if (
+                        currentUser &&
+                        currentUser.token ===
+                          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjIxMDA1MjE1MjAwNDFAaWV0bHVja25vdy5hYy5pbiIsImlhdCI6MTcwMTEwODc5MiwiZXhwIjoxNzAxMTk1MTkyfQ.tuoLoyp6HZLgUTqtQy1QTTA5P4Qlc_1uKGO0RRwYtzM"
+                      ) {
+                        return (
+                          <li key={index} className={item.cName}>
+                            <Link to={item.path}>
+                              {item.icon}
+                              <span>{item.title}</span>
+                            </Link>
+                          </li>
+                        );
+                      } else if (index !== 7) {
+                        return (
+                          <li key={index} className={item.cName}>
+                            <Link to={item.path}>
+                              {item.icon}
+                              <span>{item.title}</span>
+                            </Link>
+                          </li>
+                        );
+                      }
                     })}
                   </ul>
                 </nav>
@@ -209,12 +224,13 @@ export default function Header() {
             <Link to="/about" className="Home">
               About us
             </Link>
-            {currentUser && currentUser.token ===
-              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjIxMDA1MjE1MjAwNDFAaWV0bHVja25vdy5hYy5pbiIsImlhdCI6MTcwMTEwODc5MiwiZXhwIjoxNzAxMTk1MTkyfQ.tuoLoyp6HZLgUTqtQy1QTTA5P4Qlc_1uKGO0RRwYtzM" && (
-              <Link to="/adminListings" className="Home">
-                Items
-              </Link>
-            )}
+            {currentUser &&
+              currentUser.token ===
+                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjIxMDA1MjE1MjAwNDFAaWV0bHVja25vdy5hYy5pbiIsImlhdCI6MTcwMTEwODc5MiwiZXhwIjoxNzAxMTk1MTkyfQ.tuoLoyp6HZLgUTqtQy1QTTA5P4Qlc_1uKGO0RRwYtzM" && (
+                <Link to="/adminListings" className="Home">
+                  Items
+                </Link>
+              )}
           </ul>
         </div>
       </nav>
