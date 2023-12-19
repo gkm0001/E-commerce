@@ -10,6 +10,7 @@ const Signup = () => {
   const [phone, setPhone] = useState();
   const [address, setAddress] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false); // New state for password visibility
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -87,13 +88,22 @@ const Signup = () => {
             value={address}
           onChange={(e) => setAddress(e.target.value)}
           />
-          <Input
-            label="Password"
-            type="password"
-            placeholder="Enter your password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+          <div className="flex flex-ro items-center justify-between">
+            <Input
+              label="Password"
+              type={showPassword ? "text" : "password"}
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+
+            <i
+              className={`fa-solid fa-eye-slash cursor-pointer ${
+                showPassword ? "fa-eye" : "fa-eye-slash"
+              }`}
+              onClick={() => setShowPassword(!showPassword)}
+            ></i>
+          </div>
           <div className="text-center">
             <BlueButton val="Sign Up" loading={loading} />
           </div>

@@ -1,10 +1,8 @@
-import React from "react";
-import * as FaIcons from "react-icons/fa";
+import React, { useContext } from "react";
 import * as AiIcons from "react-icons/ai";
-import * as IoIcons from "react-icons/io";
-import { FaDollarSign, FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
 
-export const SidebarData = [
+const SidebarData = [
   {
     title: "Home",
     path: "/",
@@ -14,25 +12,25 @@ export const SidebarData = [
   {
     title: "Books",
     path: "/books",
-    icon: <i class="fa-solid fa-book-open"></i>,
+    icon: <i className="fa-solid fa-book-open"></i>,
     cName: "nav-text",
   },
   {
     title: "Electronics",
     path: "/electronics",
-    icon: <i class="fa-solid fa-plug"></i>,
+    icon: <i className="fa-solid fa-plug"></i>,
     cName: "nav-text",
   },
   {
     title: "Furniture",
     path: "/furniture",
-    icon: <i class="fa-solid fa-chair"></i>,
+    icon: <i className="fa-solid fa-chair"></i>,
     cName: "nav-text",
   },
   {
     title: "Other",
     path: "/Other",
-    icon: <i class="fa-solid fa-otter"></i>,
+    icon: <i className="fa-solid fa-otter"></i>,
     cName: "nav-text",
   },
   {
@@ -44,7 +42,15 @@ export const SidebarData = [
   {
     title: "About us",
     path: "/about",
-    icon: <i class="fa-solid fa-circle-info"></i>,
+    icon: <i className="fa-solid fa-circle-info"></i>,
+    cName: "nav-text",
+  },
+  {
+    title: "Items",
+    path: "/adminListings",
+    icon: <i className="fa-solid fa-circle-info"></i>,
     cName: "nav-text",
   },
 ];
+
+export { SidebarData };

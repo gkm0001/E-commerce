@@ -94,12 +94,14 @@
 // export default AdminListings;
 
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { InfinitySpin } from "react-loader-spinner";
 import axios from "axios";
 import ItemCard from "../ItemCard/ItemCard";
 import Pagination from "@mui/material/Pagination";
 
 const AdminListings = () => {
+  const navigate = useNavigate();
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [fetchCount, setFetchCount] = useState(0);
