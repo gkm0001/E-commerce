@@ -15,34 +15,8 @@ import axios from "axios";
 import ItemCard from "../ItemCard/ItemCard";
 import { SearchContext } from "../../Contexts/SearchContext";
 import Pagination from "@mui/material/Pagination";
-
-const App = () => {
-  useEffect(() => {
-    gsap.from(".shopAndSave h1", {
-      y: 30,
-      opacity: 0,
-      delay: 0.5,
-      duration: 0.9,
-      stagger: 0.4,
-    });
-
-    gsap.from(".left-writ-tex h3", {
-      y: 30,
-      opacity: 0,
-      delay: 0.5,
-      duration: 0.9,
-      stagger: 0.4,
-    });
-
-    gsap.from(".studentEssentail h4", {
-      y: 30,
-      opacity: 0,
-      delay: 0.5,
-      duration: 0.9,
-      stagger: 0.4,
-    });
-  }, []);
-};
+import { FaWhatsapp, FaTelegram } from "react-icons/fa";
+ 
 
 export default function Home(props) {
   const { searchedItem } = useParams();
@@ -143,7 +117,33 @@ export default function Home(props) {
             </div>
           </div>
 
-          <div className="contact-button">
+          {/* /// */}
+
+          <div className="flex flex-col sm:flex-row justify-evenly items-center py-7">
+          <div className="mb-5 sm:mb-0">
+            <div className="  bg-green-700 hover:bg-green-900 text-white font-bold py-3 px-5 rounded cursor-pointer max-[520px]:py-1.5 max-[520px]:px-2">
+
+                <a href={"https://chat.whatsapp.com/DLf9wlGi7T7LQCDGrHllcS"} target="_blank" rel="noopener noreferrer" className="flex" >
+                  <FaWhatsapp size={35} style={{ marginRight: '5px' }} />
+                  <span className="text-2xl max-[520px]:text-base ">Join Whatsapp Group</span>
+                </a>
+                
+            </div>
+          </div>
+
+          <div >
+              <div className="max-[520px]:py-1.5 max-[520px]:px-3 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-5 rounded cursor-pointer ">
+
+              <a href={"https://t.me/storeiet"} target="_blank" rel="noopener noreferrer" className="flex" >
+                <FaTelegram size={35} style={{ marginRight: '5px' }} />
+                <span className="text-2xl max-[520px]:text-base"> Join Telegram Group</span>
+              </a>
+                  
+                </div>
+          </div>
+      </div>
+
+          {/* <div className="contact-button">
             <div className="join-whatsapp-group">
               <button className="whatsapp-btn">
                 <div className="wi35px">
@@ -169,14 +169,14 @@ export default function Home(props) {
                 </div>
               </button>
             </div>
-          </div>
+          </div> */}
         </>
       ) : (
         <></>
       )}
 
       <div className="text-below-btn content" ref={contentRef}>
-        <h3>Available Listings :</h3>
+        <h3>Available Products :</h3>
       </div>
 
       {loading ? (
@@ -203,7 +203,7 @@ export default function Home(props) {
 
       <div className="flex items-center justify-center">
         <Pagination
-          count={Math.ceil(fetchCount / 8)}
+          count={Math.ceil(fetchCount / 10)}
           page={currentPage}
           onChange={handlePageChange}
           color="primary"

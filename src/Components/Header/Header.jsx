@@ -87,9 +87,9 @@ export default function Header() {
             </div>
 
             <div className="student-bazaar-logo">
-              <h2 className="student-bazaar-logo-left">Student </h2>
+              <h2 className="student-bazaar-logo-left">Student</h2>
               <h2 className="student-bazaar-logo-right">
-                <pre> Bazaar</pre>
+                <pre>Bazaar</pre>
               </h2>
             </div>
           </div>
