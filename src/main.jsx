@@ -45,8 +45,8 @@ const App = () => {
     );
   };
   // Set up axios base URL
-  axios.defaults.baseURL = "http://localhost:5000";
-  // axios.defaults.baseURL = "https://dark-gray-butterfly-yoke.cyclic.app";
+  // axios.defaults.baseURL = "http://localhost:5000";
+  axios.defaults.baseURL = "https://dark-gray-butterfly-yoke.cyclic.app";
 
   return (
     <BrowserRouter>
