@@ -214,14 +214,21 @@ export default function Home(props) {
 
       <div className="grid-wrapper">
         <div className="image-grid1">
-          <img src={book} alt="" />
+        <NavLink href="https://studentbazaar.in/books" target="_blank" rel="noopener noreferrer">
+      <img src={book} alt="Books" />
+    </NavLink>
         </div>
         <div className="image-grid2">
           <div className="image-grid21">
-            <img src={calculator} alt="" />
+          <NavLink href="https://studentbazaar.in/search/calculator" target="_blank" rel="noopener noreferrer">
+          <img src={calculator} alt="" />
+          </NavLink>
+            
           </div>
           <div className="image-grid22">
-            <img src={watch} alt="" />
+          <NavLink href="https://studentbazaar.in/search/watch" target="_blank" rel="noopener noreferrer">
+          <img src={watch} alt="watch" />
+          </NavLink>
           </div>
         </div>
       </div>
