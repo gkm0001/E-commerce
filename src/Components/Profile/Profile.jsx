@@ -3,15 +3,12 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../../Contexts/AuthContext";
 import { InfinitySpin } from "react-loader-spinner";
-import ItemCard from "../../Components/ItemCard/ItemCard";
 
 const Profile = () => {
   const navigate = useNavigate();
 
   const [user, setUser] = useState();
-  const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [listingLoading, setListingLoading] = useState(true);
   const { currentUser } = useContext(AuthContext);
 
   // Fetch user details and listed items from the database
@@ -20,31 +17,16 @@ const Profile = () => {
       setUser(res.data);
       setLoading(false);
     });
-    // axios
-    //   .get("/api/itemsListedByAdmin")
-    //   .then((res) => {
-    //     setItems(res.data);
-    //     setListingLoading(false);
-    //   });
   }, []);
-
-  // Delete an item from the database
-  const deleteItem = (id) => {
-    axios.post("/api/deleteItem", { id: id }).then((res) => {
-      console.log(res.data);
-      setItems(items.filter((item) => item._id !== id));
-    });
-  };
-
-  // Update an item in the database
-  const updateItem = (id) => {
-    navigate(`/updateItem/${id}`);
-  };
 
   const handleLogout = () => {
     localStorage.removeItem("details");
     navigate("/");
     window.location.reload();
+  };
+
+  const handleEditProfile = () => {
+    navigate(`/editProfile/${user._id}`);
   };
 
   return (
@@ -84,12 +66,18 @@ const Profile = () => {
                     <span className="break-words">{user.address}</span>
                   </div>
 
-                  <div className=" m-3.5">
+                  <div className="flex flex-row mt-3.5 justify-between ">
                     <button
                       className="bg-gray-600 hover:bg-gray-700 active:bg-gray-800 text-white text-base py-2 rounded-lg w-fit"
                       onClick={handleLogout}
                     >
                       Log out
+                    </button>
+                    <button
+                      className="bg-red-500 hover:bg-red-600 active:bg-red-700 text-white text-base py-2 rounded-lg w-fit"
+                      onClick={handleEditProfile}
+                    >
+                      Edit details
                     </button>
                   </div>
                 </div>

@@ -27,6 +27,7 @@ import Updation from "./Components/Updation/Updation.jsx";
 import { AuthContextProvider } from "./Contexts/AuthContext.jsx";
 import { ItemContextProvider } from "./Contexts/ItemContext.jsx";
 import { AdminListings } from "./Components/AdminListings/AdminListings.jsx";
+import EditProfile from "./Components/EditProfile/EditProfile.jsx";
 import Sell from "./Components/Sell/Sell.jsx";
 import axios from "axios";
 
@@ -109,6 +110,7 @@ const App = () => {
             }
           />
         </Route>
+        <Route path="editProfile/:id" element={<EditProfile />} />
       </Routes>
     </BrowserRouter>
   );
