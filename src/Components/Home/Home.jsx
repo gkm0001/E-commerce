@@ -142,34 +142,6 @@ export default function Home(props) {
                 </div>
           </div>
       </div>
-
-          {/* <div className="contact-button">
-            <div className="join-whatsapp-group">
-              <button className="whatsapp-btn">
-                <div className="wi35px">
-                  {" "}
-                  <img id="WhatsApp_icon_35px" src={whatsapp} alt="" />{" "}
-                </div>
-                <div className="wtext">
-                  <a href="https://chat.whatsapp.com/DLf9wlGi7T7LQCDGrHllcS">
-                    JOIN WHATSAPP GROUP
-                  </a>
-                </div>
-              </button>
-            </div>
-
-            <div className="join_telegram_channel">
-              <button className="join-telegrma-btn">
-                <div className="ti35px">
-                  {" "}
-                  <img id="telegram_icon_45px" src={telegram} alt="" />{" "}
-                </div>
-                <div className="tText">
-                  <a href="https://t.me/storeiet">JOIN TELEGRAM GROUP</a>
-                </div>
-              </button>
-            </div>
-          </div> */}
         </>
       ) : (
         <></>
@@ -203,7 +175,7 @@ export default function Home(props) {
 
       <div className="flex items-center justify-center">
         <Pagination
-          count={Math.ceil(fetchCount / 10)}
+          count={Math.ceil(fetchCount / 8)}
           page={currentPage}
           onChange={handlePageChange}
           color="primary"
