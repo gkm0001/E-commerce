@@ -9,12 +9,15 @@ const Profile = () => {
 
   const [user, setUser] = useState();
   const [loading, setLoading] = useState(true);
+  const [total, setTotal] = useState(0);
   const { currentUser } = useContext(AuthContext);
 
   // Fetch user details and listed items from the database
   useEffect(() => {
     axios.post("/api/profile", { token: currentUser.token }).then((res) => {
-      setUser(res.data);
+      console.log(res.data);
+      setUser(res.data.user);
+      setTotal(res.data.totalUsers);
       setLoading(false);
     });
   }, []);
@@ -65,6 +68,15 @@ const Profile = () => {
                     <span className="text-gray-800">Address : </span>
                     <span className="break-words">{user.address}</span>
                   </div>
+                  {currentUser.token ===
+                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjIxMDA1MjE1MjAwNDFAaWV0bHVja25vdy5hYy5pbiIsImlhdCI6MTcwMTEwODc5MiwiZXhwIjoxNzAxMTk1MTkyfQ.tuoLoyp6HZLgUTqtQy1QTTA5P4Qlc_1uKGO0RRwYtzM" && (
+                    <div className="text-xl text-red-600 font-semibold">
+                      <span className="text-gray-800">
+                        Total number of users :{" "}
+                      </span>
+                      <span className="break-words">{total}</span>
+                    </div>
+                  )}
 
                   <div className="flex flex-row mt-3.5 justify-between ">
                     <button
