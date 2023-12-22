@@ -1,5 +1,5 @@
 import React, { useContext, useState, useRef, useEffect } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { Link, NavLink, useParams } from "react-router-dom";
 import { InfinitySpin } from "react-loader-spinner";
 import "./Home.css";
 import mianimags from "./images/mian-imags.jpg";
@@ -186,21 +186,36 @@ export default function Home(props) {
 
       <div className="grid-wrapper">
         <div className="image-grid1">
-        <NavLink href="https://studentbazaar.in/books" target="_blank" rel="noopener noreferrer">
-      <img src={book} alt="Books" />
-    </NavLink>
+           <Link   
+                    to="/books"
+                    onClick={() =>
+                       window.scrollTo({ top: 0, behavior: "smooth" })
+                    }  
+                      >
+              <img src={book} alt="Books" />
+            </Link>
         </div>
         <div className="image-grid2">
           <div className="image-grid21">
-          <NavLink href="https://studentbazaar.in/search/calculator" target="_blank" rel="noopener noreferrer">
+          <Link 
+                  to="/search/calculator"
+                  onClick={() =>
+                     window.scrollTo({ top: 0, behavior: "smooth" })
+                  }
+                  >
           <img src={calculator} alt="" />
-          </NavLink>
+          </Link>
             
           </div>
           <div className="image-grid22">
-          <NavLink href="https://studentbazaar.in/search/watch" target="_blank" rel="noopener noreferrer">
+                <Link   
+                      to="/search/Watch"
+                      onClick={() =>
+                         window.scrollTo({ top: 0, behavior: "smooth" })
+                      }
+                >
           <img src={watch} alt="watch" />
-          </NavLink>
+          </Link>
           </div>
         </div>
       </div>
