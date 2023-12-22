@@ -121,7 +121,7 @@ export default function Home(props) {
 
           <div className="flex flex-col sm:flex-row justify-evenly items-center py-7">
           <div className="mb-5 sm:mb-0">
-            <div className="  bg-green-700 hover:bg-green-900 text-white font-bold py-3 px-5 rounded cursor-pointer max-[520px]:py-1.5 max-[520px]:px-2">
+            <div className="  bg-green-700 hover:bg-green-900 transition ease-in-out duration-300 text-white font-bold py-3 px-5 rounded cursor-pointer max-[520px]:py-1.5 max-[520px]:px-2">
 
                 <a href={"https://chat.whatsapp.com/DLf9wlGi7T7LQCDGrHllcS"} target="_blank" rel="noopener noreferrer" className="flex" >
                   <FaWhatsapp size={35} style={{ marginRight: '5px' }} />
@@ -132,7 +132,7 @@ export default function Home(props) {
           </div>
 
           <div >
-              <div className="max-[520px]:py-1.5 max-[520px]:px-3 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-5 rounded cursor-pointer ">
+              <div className="max-[520px]:py-1.5 max-[520px]:px-3 bg-blue-500 hover:bg-blue-600 transition ease-in-out duration-300 text-white font-bold py-3 px-5 rounded cursor-pointer ">
 
               <a href={"https://t.me/storeiet"} target="_blank" rel="noopener noreferrer" className="flex" >
                 <FaTelegram size={35} style={{ marginRight: '5px' }} />

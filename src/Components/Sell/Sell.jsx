@@ -37,7 +37,7 @@ function Sell() {
 
       <div className="flex flex-col sm:flex-row justify-evenly items-center py-7">
           <div className="mb-5 sm:mb-0">
-            <div className="  bg-red-700 hover:bg-red-800 text-black font-bold py-2 px-4 rounded cursor-pointer">
+            <div className="  bg-red-700 hover:bg-red-800 transition ease-in-out duration-300 text-black font-bold py-2 px-4 rounded cursor-pointer">
 
                 <a href={"https://chat.whatsapp.com/BwwqNTFZz8O7u0JvUE845Y"} target="_blank" rel="noopener noreferrer" className="flex" >
                   <FaWhatsapp size={30} style={{ marginRight: '5px' }} />
@@ -48,7 +48,7 @@ function Sell() {
           </div>
 
           <div >
-              <div className="bg-red-700 hover:bg-red-800 text-black font-bold py-2 px-4 rounded cursor-pointer">
+              <div className="bg-red-700 hover:bg-red-800 transition ease-in-out duration-300 text-black font-bold py-2 px-4 rounded cursor-pointer">
 
               <a href={"https://t.me/+JJ4hgIsa1bxjYjdl"} target="_blank" rel="noopener noreferrer" className="flex" >
                 <FaTelegram size={30} style={{ marginRight: '5px' }} />
