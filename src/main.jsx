@@ -118,7 +118,7 @@ const App = () => {
 };
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <AuthContextProvider>
       <ItemContextProvider>
         <CartContextProvider>
@@ -126,5 +126,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </CartContextProvider>
       </ItemContextProvider>
     </AuthContextProvider>
-  </React.StrictMode>
+  // </React.StrictMode>
 );
