@@ -12,6 +12,7 @@ import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { SidebarData } from "./Sidebar";
 import { AuthContext } from "../../Contexts/AuthContext";
+import { CartContext } from "../../Contexts/CartContext";
 
 export default function Header() {
   const navigate = useNavigate();
@@ -22,6 +23,7 @@ export default function Header() {
   const showSidebar = () => setSidebar(!sidebar);
 
   const { currentUser } = useContext(AuthContext);
+  const { cart } = useContext(CartContext)
   // console.log(currentUser.token);
 
   const searchHandler = (e) => {
@@ -120,6 +122,7 @@ export default function Header() {
 
           {/* <!-- side section of bar --> */}
           <div className="side-icons-section">
+          <p className="Home">{!cart.item.length ? 'nothing in your cart' : 'There are ' + cart.item.length + ' items in your cart' }</p>
             {currentUser ? (
               <Link to="/profile" className="Login">
                 <img src={LoginImg} className="pb-1" alt="" />
