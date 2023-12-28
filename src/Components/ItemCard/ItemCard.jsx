@@ -4,10 +4,12 @@ import { faIndianRupeeSign } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../../Contexts/AuthContext";
+import { CartContext } from "../../Contexts/CartContext";
 
 const ItemCard = (props) => {
   const navigate = useNavigate();
   const { currentUser } = useContext(AuthContext);
+  const { setCart } = useContext(CartContext)
 
   const base64Image = props.rest.image ? props.rest.image.buffer : null;
   const imageType = props.rest.image ? props.rest.image.mimetype : null;
@@ -21,6 +23,35 @@ const ItemCard = (props) => {
   const moreInfo = async () => {
     navigate(`/item/${props.rest._id}`);
   };
+  const cartInteraction = (e) => {
+    if(e.target.innerText !== 'Remove from cart'){
+      addToCart(e)
+    }else {
+      removeFromCart(e)
+    }
+  }
+  const addToCart = (e) => {
+    e.target.innerText = 'Remove from cart'
+    return setCart({
+      type: 'ADD',
+      payload: {
+        _id: props.rest._id,
+        userName: props.rest.userName,
+        itemName: props.rest.itemName,
+        itemCost: props.rest.itemCost,
+        category: props.rest.category,
+        image: props.rest.image
+      }
+    })
+  
+  }
+  const removeFromCart = (e) => {
+    e.target.innerText = 'Add to cart'
+    return setCart({
+      type: 'REMOVE',
+      payload: e.target.id
+    })
+  }
 
   const takeOrder = async () => {
     if (!currentUser) {
@@ -63,6 +94,13 @@ const ItemCard = (props) => {
           <p className="text-red-600 text-md mb-2 md:mb-4" onClick={moreInfo}>
             <FontAwesomeIcon icon={faIndianRupeeSign} /> {props.rest.itemCost}
           </p>
+          <button
+            id={props.rest._id}
+            className="bg-gray-900 hover:bg-red-500 text-white text-sm md:py-2 md:px-4 rounded-full focus:outline-none"
+            onClick={cartInteraction}
+          >
+            Add to cart
+          </button>
           <button
             className="bg-gray-900 hover:bg-red-500 text-white text-sm md:py-2 md:px-4 rounded-full focus:outline-none"
             onClick={moreInfo}
