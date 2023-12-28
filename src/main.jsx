@@ -26,6 +26,7 @@ import OrderInfo from "./Components/OrderInfo/OrderInfo.jsx";
 import Updation from "./Components/Updation/Updation.jsx";
 import { AuthContextProvider } from "./Contexts/AuthContext.jsx";
 import { ItemContextProvider } from "./Contexts/ItemContext.jsx";
+import { CartContextProvider } from "./Contexts/CartContext.jsx";
 import { AdminListings } from "./Components/AdminListings/AdminListings.jsx";
 import EditProfile from "./Components/EditProfile/EditProfile.jsx";
 import Sell from "./Components/Sell/Sell.jsx";
@@ -120,7 +121,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthContextProvider>
       <ItemContextProvider>
-        <App />
+        <CartContextProvider>
+          <App />
+        </CartContextProvider>
       </ItemContextProvider>
     </AuthContextProvider>
   </React.StrictMode>
