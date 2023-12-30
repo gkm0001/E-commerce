@@ -8,7 +8,7 @@ import LoginImg from "./images/login.png";
 import SearchImg from "./images/search-line.png";
 import { useState } from "react";
 import { IconContext } from "react-icons";
-import * as FaIcons from "react-icons/fa";
+import { FaBars, FaCartPlus } from "react-icons/fa"
 import * as AiIcons from "react-icons/ai";
 import { SidebarData } from "./Sidebar";
 import { AuthContext } from "../../Contexts/AuthContext";
@@ -48,7 +48,7 @@ export default function Header() {
               <IconContext.Provider value={{ color: "#fff" }}>
                 <div className="navbar">
                   <Link to="#" className="menu-bars">
-                    <FaIcons.FaBars onClick={showSidebar} />
+                    <FaBars onClick={showSidebar} />
                   </Link>
                 </div>
                 <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
@@ -158,8 +158,7 @@ export default function Header() {
               currentUser.token ===
                 "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjIxMDA1MjE1MjAwNDFAaWV0bHVja25vdy5hYy5pbiIsImlhdCI6MTcwMTEwODc5MiwiZXhwIjoxNzAxMTk1MTkyfQ.tuoLoyp6HZLgUTqtQy1QTTA5P4Qlc_1uKGO0RRwYtzM" && (
                 <Link to="/sell" className="Cart">
-                  <div className=" text-white font-bold text-2xl  md:text-4xl text-center">
-                    +
+                    <FaCartPlus fill="white" />
                   </div>
                   <div className="Cart-text">Add</div>
                 </Link>
