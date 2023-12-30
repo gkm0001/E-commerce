@@ -96,7 +96,7 @@ const ItemCard = (props) => {
           </p>
           <div className="flex flex-wrap">
             {currentUser &&
-              currentUser.token !==
+              currentUser.token ===
                 "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjIxMDA1MjE1MjAwNDFAaWV0bHVja25vdy5hYy5pbiIsImlhdCI6MTcwMTEwODc5MiwiZXhwIjoxNzAxMTk1MTkyfQ.tuoLoyp6HZLgUTqtQy1QTTA5P4Qlc_1uKGO0RRwYtzM" && (
                   <button
                   id={props.rest._id}
