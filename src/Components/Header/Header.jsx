@@ -158,7 +158,9 @@ export default function Header() {
               currentUser.token ===
                 "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjIxMDA1MjE1MjAwNDFAaWV0bHVja25vdy5hYy5pbiIsImlhdCI6MTcwMTEwODc5MiwiZXhwIjoxNzAxMTk1MTkyfQ.tuoLoyp6HZLgUTqtQy1QTTA5P4Qlc_1uKGO0RRwYtzM" && (
                 <Link to="/sell" className="Cart">
+                  <div className="text-white font-bold text-2xl  md:text-4xl text-center relative">
                     <FaCartPlus fill="white" />
+                    <p className="absolute top-4 left-9">{cart.item.length}</p>
                   </div>
                   <div className="Cart-text">Add</div>
                 </Link>
