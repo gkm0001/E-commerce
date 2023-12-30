@@ -94,24 +94,26 @@ const ItemCard = (props) => {
           <p className="text-red-600 text-md mb-2 md:mb-4" onClick={moreInfo}>
             <FontAwesomeIcon icon={faIndianRupeeSign} /> {props.rest.itemCost}
           </p>
-          {currentUser &&
-            currentUser.token ===
-              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjIxMDA1MjE1MjAwNDFAaWV0bHVja25vdy5hYy5pbiIsImlhdCI6MTcwMTEwODc5MiwiZXhwIjoxNzAxMTk1MTkyfQ.tuoLoyp6HZLgUTqtQy1QTTA5P4Qlc_1uKGO0RRwYtzM" && (
-                <button
-                id={props.rest._id}
-                className="bg-gray-900 hover:bg-red-500 text-white text-sm md:py-2 md:px-4 rounded-full focus:outline-none"
-                onClick={cartInteraction}
-              >
-                Add to cart
-              </button>
-            )
-          }
-          <button
-            className="bg-gray-900 hover:bg-red-500 text-white text-sm md:py-2 md:px-4 rounded-full focus:outline-none"
-            onClick={moreInfo}
-          >
-            Buy Now
-          </button>
+          <div className="flex flex-wrap">
+            {currentUser &&
+              currentUser.token !==
+                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjIxMDA1MjE1MjAwNDFAaWV0bHVja25vdy5hYy5pbiIsImlhdCI6MTcwMTEwODc5MiwiZXhwIjoxNzAxMTk1MTkyfQ.tuoLoyp6HZLgUTqtQy1QTTA5P4Qlc_1uKGO0RRwYtzM" && (
+                  <button
+                  id={props.rest._id}
+                  className="bg-gray-900 hover:bg-red-500 text-white text-sm md:py-2 md:px-4 rounded-full focus:outline-none mr-2"
+                  onClick={cartInteraction}
+                >
+                  Add to cart
+                </button>
+              )
+            }
+            <button
+              className="bg-gray-900 hover:bg-red-500 text-white text-sm md:py-2 md:px-4 rounded-full focus:outline-none"
+              onClick={moreInfo}
+            >
+              Buy Now
+            </button>
+          </div>
         </div>
       </div>
     </div>
