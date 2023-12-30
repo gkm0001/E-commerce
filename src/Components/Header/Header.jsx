@@ -23,7 +23,7 @@ export default function Header() {
   const showSidebar = () => setSidebar(!sidebar);
 
   const { currentUser } = useContext(AuthContext);
-  const { cart } = useContext(CartContext)
+  const { cart, setCart } = useContext(CartContext)
   // console.log(currentUser.token);
 
   const searchHandler = (e) => {
@@ -36,7 +36,22 @@ export default function Header() {
   const toggleSearch = () => {
     setIsSearchVisible(!isSearchVisible);
   };
-
+  
+  const addToCart = () => {
+    let data = JSON.parse(localStorage.getItem("item"))
+    return setCart({
+      type: 'ADD',
+      payload: {
+        _id: data._id,
+        userName: data.userName,
+        itemName: data.itemName,
+        itemCost: data.itemCost,
+        category: data.category,
+        image: data.image
+      }
+    })
+  }
+  
   return (
     <header className="header">
       <nav className="nav-bar">
@@ -122,7 +137,6 @@ export default function Header() {
 
           {/* <!-- side section of bar --> */}
           <div className="side-icons-section">
-          <p className="Home">{!cart.item.length ? 'nothing in your cart' : 'There are ' + cart.item.length + ' items in your cart' }</p>
             {currentUser ? (
               <Link to="/profile" className="Login">
                 <img src={LoginImg} className="pb-1" alt="" />
@@ -162,7 +176,7 @@ export default function Header() {
                     <FaCartPlus fill="white" />
                     <p className="absolute top-4 left-9">{cart.item.length}</p>
                   </div>
-                  <div className="Cart-text">Add</div>
+                  {window.location.pathname.search('item') != 1 ? '' : <div className="Cart-text" onClick={addToCart}>Add</div> }
                 </Link>
               )}
 
